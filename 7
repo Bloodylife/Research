@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>ScholarSphere AI - Smart Scheduling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d78f2;
+        --primary-hover-color: #0b63c8;
+        --secondary-color: #e7edf4;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --background-color: #f9fafb;
+        --border-color: #e5e7eb;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background-color);
+      }
+      .status-pill {
+        @apply px-3 py-1 text-xs font-medium rounded-full;
+      }
+      .status-completed {
+        @apply bg-green-100 text-green-800;
+      }
+      .status-in-progress {
+        @apply bg-yellow-100 text-yellow-800;
+      }
+      .status-not-started {
+        @apply bg-gray-100 text-gray-800;
+      }
+    </style>
+</head>
+<body class="text-gray-800">
+<div class="flex min-h-screen">
+<aside class="w-80 bg-white border-r border-[var(--border-color)] flex flex-col p-6">
+<div class="flex items-center gap-2 mb-8">
+<svg class="text-[var(--primary-color)]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+<h1 class="text-2xl font-bold text-[var(--text-primary)]">ScholarSphere</h1>
+</div>
+<nav class="flex-1 space-y-4">
+<a class="flex items-center gap-3 px-4 py-2 text-[var(--text-secondary)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary)] rounded-md transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2v6h6V2h-6zM15.5 2v6h6V2h-6zM2.5 16v6h6v-6h-6zM15.5 16v6h6v-6h-6z"></path></svg>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[var(--text-primary)] bg-[var(--secondary-color)] rounded-md font-semibold transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+<span>Smart Scheduling</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[var(--text-secondary)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary)] rounded-md transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+<span>Research</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[var(--text-secondary)] hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary)] rounded-md transition-colors" href="#">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+<span>Writing Assistant</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-3 px-4 py-3 bg-[var(--primary-color)] text-white font-semibold rounded-md hover:bg-[var(--primary-hover-color)] transition-colors">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14m-7-7h14"></path></svg>
+<span>New Project</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<header class="mb-8">
+<h2 class="text-3xl font-bold text-[var(--text-primary)]">Smart Scheduling &amp; Progress Tracking</h2>
+<p class="text-[var(--text-secondary)] mt-1">Manage your research timeline effectively with AI-powered suggestions.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white p-6 rounded-lg border border-[var(--border-color)] shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold text-[var(--text-primary)]">Project Timeline</h3>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-md hover:bg-[var(--secondary-color)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6"></path></svg>
+</button>
+<span class="text-lg font-medium text-[var(--text-primary)]">July - August 2024</span>
+<button class="p-2 rounded-md hover:bg-[var(--secondary-color)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 18l6-6-6-6"></path></svg>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<p class="text-center font-semibold mb-3 text-[var(--text-primary)]">July 2024</p>
+<div class="grid grid-cols-7 gap-1 text-center text-sm text-[var(--text-secondary)]">
+<span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+</div>
+<div class="grid grid-cols-7 gap-1 mt-2 text-sm">
+<span class="text-gray-400 col-start-2">30</span>
+<span class="">1</span><span class="">2</span><span class="">3</span><span class="">4</span>
+<div class="bg-blue-100 rounded-l-full">5</div>
+<div class="bg-blue-100">6</div>
+<div class="bg-blue-100">7</div>
+<div class="bg-blue-100">8</div>
+<div class="bg-blue-100">9</div>
+<div class="bg-blue-100">10</div>
+<div class="bg-blue-100">11</div>
+<div class="bg-blue-100">12</div>
+<div class="bg-blue-100">13</div>
+<div class="bg-blue-100">14</div>
+<div class="bg-blue-100 relative"><span class="absolute inset-0 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center">15</span></div>
+<div class="bg-blue-100">16</div>
+<div class="bg-blue-100">17</div>
+<div class="bg-blue-100">18</div>
+<div class="bg-blue-100">19</div>
+<div class="bg-blue-100 rounded-r-full">20</div>
+<span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+<span>28</span><span>29</span><span>30</span><span>31</span>
+</div>
+</div>
+<div>
+<p class="text-center font-semibold mb-3 text-[var(--text-primary)]">August 2024</p>
+<div class="grid grid-cols-7 gap-1 text-center text-sm text-[var(--text-secondary)]">
+<span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+</div>
+<div class="grid grid-cols-7 gap-1 mt-2 text-sm">
+<span class="text-gray-400 col-start-5">1</span><span class="text-gray-400">2</span><span class="text-gray-400">3</span>
+<span>4</span>
+<div class="bg-yellow-100 rounded-l-full">5</div>
+<div class="bg-yellow-100">6</div>
+<div class="bg-yellow-100">7</div>
+<div class="bg-yellow-100">8</div>
+<div class="bg-yellow-100">9</div>
+<div class="bg-yellow-100">10</div>
+<div class="bg-yellow-100">11</div>
+<div class="bg-yellow-100">12</div>
+<div class="bg-yellow-100">13</div>
+<div class="bg-yellow-100">14</div>
+<div class="bg-yellow-100 rounded-r-full relative"><span class="absolute inset-0 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center">15</span></div>
+<span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span>
+<span>23</span><span>24</span>
+<div class="bg-gray-200 rounded-l-full rounded-r-full relative"><span class="absolute inset-0 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center">25</span></div>
+<span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-semibold text-[var(--text-primary)] mb-4">Task Progress</h3>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-[var(--text-primary)]">Overall Progress</span>
+<span class="text-sm font-medium text-[var(--primary-color)]">50%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg border border-[var(--border-color)] shadow-sm">
+<h3 class="text-xl font-semibold text-[var(--text-primary)] mb-6">Manage Tasks</h3>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-[var(--text-secondary)]" for="task-name">Task Name</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="task-name" placeholder="e.g., Literature Review" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-[var(--text-secondary)]" for="start-date">Start Date</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="start-date" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--text-secondary)]" for="end-date">End Date</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="end-date" type="date"/>
+</div>
+</div>
+<div>
+<p class="text-sm text-[var(--text-secondary)] flex items-center gap-2">
+<svg class="text-yellow-500" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    AI Suggestion: Est. duration 5 days.
+                </p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[var(--primary-color)] text-white font-semibold rounded-md hover:bg-[var(--primary-hover-color)] transition-colors" type="submit">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14m-7-7h14"></path></svg>
+<span>Add New Task</span>
+</button>
+</form>
+</div>
+</div>
+<div class="mt-8 bg-white p-6 rounded-lg border border-[var(--border-color)] shadow-sm">
+<h3 class="text-xl font-semibold text-[var(--text-primary)] mb-4">Task List</h3>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider" scope="col">Task</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider" scope="col">Status</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider" scope="col">Due Date</th>
+<th class="relative px-6 py-3" scope="col">
+<span class="sr-only">Actions</span>
+</th>
+</tr>
+</thead>
+<tbody class="bg-white divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary)]">Literature Review</td>
+<td class="px-6 py-4 whitespace-nowrap"><span class="status-pill status-in-progress">In Progress</span></td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary)]">2024-07-15</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-[var(--primary-color)] hover:text-[var(--primary-hover-color)]" href="#">Edit</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary)]">Data Collection</td>
+<td class="px-6 py-4 whitespace-nowrap"><span class="status-pill status-completed">Completed</span></td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary)]">2024-07-20</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-[var(--primary-color)] hover:text-[var(--primary-hover-color)]" href="#">View</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary)]">Data Analysis</td>
+<td class="px-6 py-4 whitespace-nowrap"><span class="status-pill status-not-started">Not Started</span></td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary)]">2024-08-05</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-[var(--primary-color)] hover:text-[var(--primary-hover-color)]" href="#">Start</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary)]">Drafting Report</td>
+<td class="px-6 py-4 whitespace-nowrap"><span class="status-pill status-not-started">Not Started</span></td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary)]">2024-08-15</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-[var(--primary-color)] hover:text-[var(--primary-hover-color)]" href="#">Start</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary)]">Final Review</td>
+<td class="px-6 py-4 whitespace-nowrap"><span class="status-pill status-not-started">Not Started</span></td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary)]">2024-08-25</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-[var(--primary-color)] hover:text-[var(--primary-hover-color)]" href="#">Start</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
