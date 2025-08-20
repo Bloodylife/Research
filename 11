@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>ScholarSphere AI - University Resources</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;600;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d78f2;
+        --secondary-color: #e2e8f0;
+        --background-color: #f8fafc;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --accent-color: #eef2ff;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .btn-primary {
+        @apply bg-[var(--primary-color)] text-white hover:bg-opacity-90;
+      }
+      .nav-link {
+        @apply text-sm font-medium text-gray-700 hover:text-[var(--primary-color)] transition-colors duration-200;
+      }
+      .active-nav-link {
+        @apply text-sm font-semibold text-[var(--primary-color)];
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-color)]">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)]" href="#">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+<span>ScholarSphere AI</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="nav-link" href="#">Dashboard</a>
+<a class="nav-link" href="#">Projects</a>
+<a class="active-nav-link relative" href="#">
+                  Resources
+                  <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[var(--primary-color)] rounded-full"></span>
+</a>
+<a class="nav-link" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"> search </span>
+<input class="form-input w-full rounded-md border-gray-300 bg-white pl-10 pr-4 py-2 text-sm text-[var(--text-primary)] focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)]" placeholder="Search..." type="search"/>
+</div>
+<button class="relative rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+<span class="material-icons"> notifications </span>
+<span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+<button class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0DlaeKwBuhLZQy1W0_d7WrrUcjmhHSMnYlJ9inBgmJQ_OPUz5fyfNeQucfIVnVBh-STM-99Cm1dUVHczFmzfOUO7_fwB8j-ZyxDME_qscyvcnD1w7Wczt7vtQQQjiyrGjBFBqVl3fZ5xzwTrZMiQ2fIgX4p5YSXpX2v9qqNfkYVnH5RzqTpizKOD0lAghDztHjmJzS2HkXke7bJe-MT2-2uIi-hpVYhuGqfM1N3gc-CmzqsTJGanr_wRZpI3gORZhGuzW6rC7NXU");'></div>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-4xl font-bold tracking-tight text-[var(--text-primary)]">University Resources</h1>
+<p class="mt-2 text-lg text-[var(--text-secondary)]">
+                Seamlessly connect with your university's library, databases, and support services.
+              </p>
+</header>
+<div class="mb-8">
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] pointer-events-none"> search </span>
+<input class="form-input w-full rounded-md border-gray-300 bg-white pl-12 pr-4 py-3 text-base text-[var(--text-primary)] focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] transition" placeholder="Search within university resources..." type="search"/>
+</div>
+<p class="mt-2 text-sm text-[var(--text-secondary)]">Single sign-on is enabled for your university.</p>
+</div>
+<section class="mb-12">
+<h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Quick Access</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<a class="group flex flex-col items-center justify-center text-center p-6 bg-white rounded-lg border border-gray-200 hover:border-[var(--primary-color)] hover:shadow-lg transition-all duration-300" href="#">
+<div class="mb-4 flex items-center justify-center h-16 w-16 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons text-4xl"> menu_book </span>
+</div>
+<h3 class="text-base font-semibold text-[var(--text-primary)]">University Library Portal</h3>
+</a>
+<a class="group flex flex-col items-center justify-center text-center p-6 bg-white rounded-lg border border-gray-200 hover:border-[var(--primary-color)] hover:shadow-lg transition-all duration-300" href="#">
+<div class="mb-4 flex items-center justify-center h-16 w-16 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons text-4xl"> storage </span>
+</div>
+<h3 class="text-base font-semibold text-[var(--text-primary)]">Relevant Databases</h3>
+</a>
+<a class="group flex flex-col items-center justify-center text-center p-6 bg-white rounded-lg border border-gray-200 hover:border-[var(--primary-color)] hover:shadow-lg transition-all duration-300" href="#">
+<div class="mb-4 flex items-center justify-center h-16 w-16 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons text-4xl"> support_agent </span>
+</div>
+<h3 class="text-base font-semibold text-[var(--text-primary)]">Support Services</h3>
+</a>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Support Contacts</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200">
+<div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons"> school </span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-[var(--text-primary)]">Academic Advisors</p>
+<p class="text-sm text-[var(--text-secondary)]">Available Monday to Friday, 9 AM - 5 PM</p>
+</div>
+<a class="btn-primary rounded-md px-4 py-2 text-sm font-medium" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200">
+<div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons"> local_library </span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-[var(--text-primary)]">Librarians</p>
+<p class="text-sm text-[var(--text-secondary)]">Available Monday to Friday, 10 AM - 4 PM</p>
+</div>
+<a class="btn-primary rounded-md px-4 py-2 text-sm font-medium" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200">
+<div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-color)] text-[var(--primary-color)]">
+<span class="material-icons"> edit_note </span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-[var(--text-primary)]">Writing Center</p>
+<p class="text-sm text-[var(--text-secondary)]">Available Monday to Friday, 11 AM - 6 PM</p>
+</div>
+<a class="btn-primary rounded-md px-4 py-2 text-sm font-medium" href="#">Contact</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-gray-200">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="flex justify-between items-center text-sm text-[var(--text-secondary)]">
+<p>© 2024 ScholarSphere AI. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-[var(--primary-color)]" href="#">Terms of Service</a>
+<a class="hover:text-[var(--primary-color)]" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
