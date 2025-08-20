@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #f0f7ff;
+        --primary-100: #e0f0ff;
+        --primary-200: #c2e0ff;
+        --primary-300: #94d0ff;
+        --primary-400: #58b8ff;
+        --primary-500: #299cff;
+        --primary-600: #0d78f2;
+        --primary-700: #0c61dd;
+        --primary-800: #0950b5;
+        --primary-900: #074293;
+        --primary-950: #05295c;
+        --gray-50: #f7f7f8;
+        --gray-100: #e3e4e6;
+        --gray-200: #c8c9cd;
+        --gray-300: #a5a7ad;
+        --gray-400: #7e8188;
+        --gray-500: #62656d;
+        --gray-600: #4f5259;
+        --gray-700: #424449;
+        --gray-800: #36383c;
+        --gray-900: #303135;
+        --gray-950: #1d1e20;
+      }
+    </style>
+<title>ScholarSphere AI - Virtual Lab</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+</head>
+<body class="bg-[var(--gray-50)]" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="sticky top-0 z-20 w-full bg-white/80 backdrop-blur-sm">
+<div class="mx-auto flex max-w-7xl items-center justify-between border-b border-solid border-[var(--gray-100)] px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-xl font-bold text-[var(--gray-900)]" href="#">
+<svg class="h-6 w-6 text-[var(--primary-600)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+<span>ScholarSphere AI</span>
+</a>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-[var(--gray-600)] transition-colors hover:text-[var(--primary-600)]" href="#">Dashboard</a>
+<a class="text-sm font-medium text-[var(--gray-600)] transition-colors hover:text-[var(--primary-600)]" href="#">Projects</a>
+<a class="font-semibold text-sm text-[var(--primary-600)]" href="#">Virtual Lab</a>
+<a class="text-sm font-medium text-[var(--gray-600)] transition-colors hover:text-[var(--primary-600)]" href="#">Resources</a>
+<a class="text-sm font-medium text-[var(--gray-600)] transition-colors hover:text-[var(--primary-600)]" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center justify-end gap-4">
+<div class="relative hidden lg:block">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-[var(--gray-400)]" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full rounded-md border-[var(--gray-200)] bg-[var(--gray-50)] pl-10 text-sm text-[var(--gray-900)] transition focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" placeholder="Search..." type="search"/>
+</div>
+<button class="relative flex h-10 w-10 items-center justify-center rounded-full text-[var(--gray-500)] transition-colors hover:bg-[var(--gray-100)] hover:text-[var(--gray-900)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+<span class="absolute right-0 top-0 -mr-1 -mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--primary-600)] text-xs font-bold text-white">3</span>
+</button>
+<button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--gray-50)] focus:ring-[var(--primary-500)] rounded-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK9rigLMydzkrNRGQ3n0di5TNyQvm_f3Z6FamG-bMf9JJuQKBA3w1T8CeG5LM_INN62X4rFhGPVWd9cZZmY5gENAqSqGBzjLzqJzIJ8e-hFne0s8qgsOjFhGxFpIqGAc2iPkNi5IsjwEOFDEZqooTI-oGB3H7qsjQIzAoBcilVqOX5FJWZ_ilvy0GJghFL-9ysszfbu7-XaekoL5nXmE6UyS0PV4cFL2EEIG13nnQTzDoNMAU437DfedC9KP0YBhurff4aaGp2Io8");'></div>
+</button>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-8 sm:px-6 lg:flex-row lg:gap-8 lg:px-8">
+<aside class="mb-8 w-full shrink-0 rounded-lg border border-[var(--gray-200)] bg-white p-6 shadow-sm lg:mb-0 lg:w-80 xl:w-96">
+<h2 class="mb-4 text-xl font-bold text-[var(--gray-900)]">Analysis Modules</h2>
+<div class="mb-6 border-b border-[var(--gray-200)]">
+<nav aria-label="Tabs" class="-mb-px flex space-x-4">
+<a class="border-b-2 border-[var(--primary-600)] px-3 py-2 text-sm font-semibold text-[var(--primary-600)]" href="#">XRD</a>
+<a class="border-b-2 border-transparent px-3 py-2 text-sm font-medium text-[var(--gray-500)] hover:border-[var(--gray-300)] hover:text-[var(--gray-700)]" href="#">SEM</a>
+<a class="border-b-2 border-transparent px-3 py-2 text-sm font-medium text-[var(--gray-500)] hover:border-[var(--gray-300)] hover:text-[var(--gray-700)]" href="#">UV-Vis</a>
+<a class="border-b-2 border-transparent px-3 py-2 text-sm font-medium text-[var(--gray-500)] hover:border-[var(--gray-300)] hover:text-[var(--gray-700)]" href="#">Raman</a>
+</nav>
+</div>
+<h3 class="mb-4 text-lg font-semibold text-[var(--gray-800)]">XRD Parameters</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-[var(--gray-700)]" for="wavelength">Wavelength (Å)</label>
+<input class="form-input mt-1 block w-full rounded-md border-[var(--gray-300)] shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)] sm:text-sm" id="wavelength" placeholder="e.g., 1.5406" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--gray-700)]" for="2theta-range">2θ Range (degrees)</label>
+<input class="form-input mt-1 block w-full rounded-md border-[var(--gray-300)] shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)] sm:text-sm" id="2theta-range" placeholder="e.g., 10-80" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--gray-700)]" for="peak-width">Peak Width (degrees)</label>
+<input class="form-input mt-1 block w-full rounded-md border-[var(--gray-300)] shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)] sm:text-sm" id="peak-width" placeholder="e.g., 0.1" type="text"/>
+</div>
+<button class="flex w-full items-center justify-center rounded-md border border-transparent bg-[var(--primary-600)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-700)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2">
+<svg class="mr-2" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M244,128a11.83,11.83,0,0,1-10.5,11.8L216,144l-42,12.56-12.55,42L156,216l-4.2,17.5a12,12,0,0,1-23.6,0L124,216,100,199.44,79.06,178.5,42.25,170.83a12,12,0,0,1,0-23.66L80,138.5,100.94,117.6,121.5,80.75a12,12,0,0,1,23.66,0L152,100,169.5,124,196,128l17.5,4.2A11.83,11.83,0,0,1,244,128ZM128,152a24,24,0,1,0-24-24A24,24,0,0,0,128,152Zm56-80a16,16,0,1,0-16-16A16,16,0,0,0,184,72ZM72,88a16,16,0,1,0-16-16A16,16,0,0,0,72,88Z"></path>
+</svg>
+              Simulate
+            </button>
+</div>
+</aside>
+<section class="flex-1 rounded-lg border border-[var(--gray-200)] bg-white p-6 shadow-sm">
+<div class="mb-6 flex flex-wrap items-start justify-between gap-4">
+<div>
+<h1 class="text-2xl font-bold text-[var(--gray-900)] sm:text-3xl">Virtual Lab - XRD Simulation</h1>
+<p class="mt-1 text-sm text-[var(--gray-500)]">AI-generated data based on your parameters</p>
+</div>
+<div class="flex shrink-0 gap-2">
+<button class="flex items-center justify-center gap-2 rounded-md border border-[var(--gray-300)] bg-white px-3 py-2 text-sm font-medium text-[var(--gray-700)] shadow-sm hover:bg-[var(--gray-50)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2">
+<svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path>
+</svg>
+                Export Data
+              </button>
+<button class="flex items-center justify-center gap-2 rounded-md border border-[var(--gray-300)] bg-white px-3 py-2 text-sm font-medium text-[var(--gray-700)] shadow-sm hover:bg-[var(--gray-50)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2">
+<svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8v96a16,16,0,0,0,16,16H168a16,16,0,0,0,16-16V176h32a8,8,0,0,0,8-8V48A8,8,0,0,0,216,40ZM168,192H48V96h80a8,8,0,0,0,8-8V48h72Z"></path>
+</svg>
+                Export Visual
+              </button>
+</div>
+</div>
+<div class="rounded-lg border border-[var(--gray-200)] p-4">
+<div class="mb-4">
+<h3 class="text-lg font-semibold text-[var(--gray-800)]">Simulated XRD Pattern</h3>
+<p class="text-sm text-[var(--gray-500)]">Intensity (a.u.)</p>
+</div>
+<div class="h-80 w-full">
+<svg fill="none" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 500 320" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--primary-400)" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="var(--primary-50)" stop-opacity="0"></stop>
+</linearGradient>
+<marker id="dot" markerHeight="5" markerWidth="5" refX="5" refY="5" viewBox="0 0 10 10"><circle cx="5" cy="5" fill="var(--primary-600)" r="5"></circle></marker>
+</defs>
+<g transform="translate(40, 20)">
+<path d="M0 300 V0" stroke="var(--gray-300)" stroke-width="1"></path>
+<path d="M0 300 H460" stroke="var(--gray-300)" stroke-width="1"></path>
+<g class="labels y-axis" fill="var(--gray-500)" font-size="12" text-anchor="end">
+<text x="-8" y="305">0</text>
+<text x="-8" y="225">2k</text>
+<text x="-8" y="150">4k</text>
+<text x="-8" y="75">6k</text>
+<text x="-8" y="5">8k</text>
+</g>
+<g class="labels x-axis" fill="var(--gray-500)" font-size="12" text-anchor="middle">
+<text x="0" y="320">10</text>
+<text x="115" y="320">20</text>
+<text x="230" y="320">30</text>
+<text x="345" y="320">40</text>
+<text x="460" y="320">50</text>
+</g>
+<text fill="var(--gray-600)" font-size="14" font-weight="500" text-anchor="middle" x="230" y="340">2θ (degrees)</text>
+<path d="M 0 250 Q 57.5 50, 115 200 T 230 150 T 345 50 T 460 250" fill="url(#gradient)" marker-end="url(#dot)" marker-mid="url(#dot)" marker-start="url(#dot)" stroke="var(--primary-600)" stroke-width="2"></path>
+</g>
+</svg>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="mb-2 text-lg font-semibold text-[var(--gray-800)]">Sample Information &amp; AI Caption</h3>
+<div>
+<label class="sr-only" for="description">Sample Description</label>
+<textarea class="form-textarea block w-full rounded-md border-[var(--gray-300)] shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)] sm:text-sm" id="description" placeholder="AI-generated caption: The simulated XRD pattern displays characteristic peaks at 2θ values of approximately 25°, 38°, and 44°, suggesting a crystalline material with a potential cubic structure. Further analysis is recommended for phase identification." rows="4"></textarea>
+</div>
+</div>
+<div class="mt-6 rounded-md bg-yellow-50 p-4">
+<div class="flex">
+<div class="flex-shrink-0">
+<svg aria-hidden="true" class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 14a1 1 0 110-2 1 1 0 010 2zm0-5a1 1 0 01-1-1V6a1 1 0 112 0v2a1 1 0 01-1 1z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="ml-3">
+<p class="text-sm text-yellow-700">
+<span class="font-bold">Disclaimer:</span> This tool is for educational and illustrative purposes only. Results should not be used for critical
+                  decision-making without experimental validation.
+                </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>
