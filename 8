@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B600%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d78f2;
+        --secondary-color: #f0f6ff;
+        --text-primary: #18181b;
+        --text-secondary: #71717a;
+        --background-color: #ffffff;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background-color);
+      }
+    </style>
+<title>ScholarSphere AI - Personalized Learning</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3 text-2xl font-bold">
+<div class="w-8 h-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="tracking-tight">ScholarSphere AI</h1>
+</div>
+<nav class="flex items-center gap-8 text-base font-medium text-gray-600">
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Dashboard</a>
+<a class="text-[var(--primary-color)] font-semibold" href="#">Learning Paths</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Projects</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Resources</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md border-gray-300 bg-white h-10 placeholder:text-gray-400 pl-10 pr-4 text-base font-normal focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)]" placeholder="Search resources..." value=""/>
+</label>
+<button class="flex items-center justify-center rounded-md h-10 w-10 border border-gray-300 hover:bg-gray-100 transition-colors">
+<div class="text-gray-600" data-icon="Bell" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white ring-2 ring-gray-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD46817CtJ-NjSSw7EC2Y7w_rAxGKYQ3g9qHfwwSCIZUDzRnBC7OKodU-ovwseVdTJc4qYq0m3Rg8DhoicCNDJPqH7Gw5zQLkmaSjR434P4_9HO7hplsGQt2qR-LxIdXEL2jy6BWuTjbF8SfsreNvDIzuGhGiS-KIBnLjf_m5IhE9FJaDzCHh_NjXwacDtgz7UTIBNA12I2Mao3ThsJgqwu_2bWTymC1poFexXW6ie0jUpK2YYFHi021cJj-uKRlVLziruO_vtMczA");'></div>
+</div>
+</header>
+<main class="flex-1 bg-gray-50/50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="mb-10">
+<h2 class="text-4xl font-bold tracking-tight">Personalized Learning Paths</h2>
+<p class="text-lg text-[var(--text-secondary)] mt-2">Explore resources tailored to your research area and progress.</p>
+</div>
+<div class="space-y-12">
+<section>
+<h3 class="text-2xl font-bold mb-6">Recommended Courses</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Data Analysis for Research" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSjOKZgZHBwssAVmMR4-46Z8m-BaQcXYaZ1bAzi_5vqTpmyjN8HqwLeelthacQ6XLGbFNQXfP6t61jxnAbwvCyVML798aDUd-wkj-XUfDfYMLOb47C1uZhE7_Lpyi4dkA4pbit6I9QXBx0DjUHPrcbE8YBokEL_8v-nhgQ0Q8tXhAgHyBrDV1gYZYii03p7U6GhOT-JfCqth91nqtPMS17qUuwtBCTELSDhXybaSbcP09Thh-6u7-gAj51CZNU_kQM2glLxCH2TdU"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Data Analysis for Research</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Learn to analyze data effectively for your research projects.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                        Start Course
+                      </button>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Research Methodology Fundamentals" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr169Ee1l7U-vR0vBVMRbbI2tJICZk_mjW4y5hUYwRQLwnbC-Qn1F-Xog4SL59mv7DPHhDP_mv9JLUDxIRMnscb10TIFRfpjSX7r5a92Rfd1U1Bz_sa42jQh9SktxfckrOqaXDuOuDpHc3VW2o-peofBH9B2bHnQKroaL37fZJxFR11ReawIU6EnaAZlvFr631RiE7-Swdlb1ZWWuqaHcYLtVzvbonTvyU-NG1E3z3oeg_4KzVpcKDsn09xB8LuPVFvYxDZt3ay04"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Research Methodology Fundamentals</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Master the core principles of research methodology.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                        Start Course
+                      </button>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Effective Academic Writing" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4NXlvGeRudBo3VjjGWhFs2p5UxtIz0T2KBAf0AytnJb5EE8JgGpgYJCMpcJXC5XHc7FhE12otSSFikuLb10nA9dRch8rNBPz0Xv9iceeFwdd8HmzuGRS6KI-5rzatjYddnr1OYwPiCy8227J_CAslikPanSXW7_QIS6ambyOBJTce5jUVSYCwrbD2fojyIwj0_BZYUGKTntrMFlGflJNajOGjqh0ywcj0Cf8MFzwmCCuzHu4wkvYM9RNFBNTmWrhO_1vrhnftnc"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Effective Academic Writing</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Enhance your academic writing skills with practical tips.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                        Start Course
+                      </button>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold mb-6">Workshops &amp; Tutorials</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Literature Review Workshop" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5GbV4YFY293GmB9OIILHxVBsL410S57rlMfib7zBkOhUPJAHpfllhwDqzMvQhGX2HTY1Otx22JZK0f2DfdHGVIHWvitx45iDetESTNNeNMBWN0zeHaHZn7J-9yk-7EaCOSNkadSbC2A66udxk3KBy7OyldkJzKuIM556pAjyt-qZabDjpL0YcZ-RRoUcco3Lu3N08CSFgC9vlTOpj82U_syEVR3cxBgiZTAbyaNDNn22UnM7sy3i4nYoR1uEBU5wjttGEYm7jSo"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Literature Review Workshop</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Improve your literature review process with expert guidance.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-sm font-medium hover:bg-blue-100 transition-colors">
+                        Join Workshop
+                      </button>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Citation Management Tutorial" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFyIiD1emQbmVtOQAhFsij5oZUXhLXmRjL_B-oVK6arfKQPM9UVjFxb48mUVICxh3RE-hWq6o6yAPHuat_IgiTY3d2SE76MGCCJ4DGI3rJn81AZSq3Y6ZK3L8erln9WSBJrTfCUmgcuNi1nMblRbCkV3mHrpdRFcDswtQxooPV0_0zanMb-5_AlXmH_WcLh7YyDSB4g1Gozbb0nJ4o8ET8zCdYmC3zBSeKlID5JmsktKKpXtZAtjVegBnvL0fIt1x_PAgWpRRLUs"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Citation Management Tutorial</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Learn to manage citations efficiently using modern tools.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-sm font-medium hover:bg-blue-100 transition-colors">
+                        Watch Tutorial
+                      </button>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<img alt="Presentation Skills Workshop" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFI1RVNbgI2bX5YaXLB03rtzsAgpzEEyji2woWPPk-1jToOh9sNUx0Pl-oaaOAxNKHa5rh0vn_H468YD_Mw1XXBLAYilNm9D-03tb3hzUQWJngonQv_8nxoPWcdEmMzaMQTOvWK7jbjL4UiVkFE1KKPX_xOkKyOGiy6ywBZ8ScYmLQv16cpypvvWvqIrH5IEjsbIpKHjoZcE3ThF94surPcrrrE9cjII1j4l9R2dnQZOFm92LOu8DvKqlGDOxf1QY0AEQ-6WsYRpI"/>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Presentation Skills Workshop</h4>
+<p class="text-[var(--text-secondary)] mt-1 flex-grow">Develop effective presentation techniques for academic settings.</p>
+<button class="mt-4 w-full flex items-center justify-center rounded-md h-10 px-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-sm font-medium hover:bg-blue-100 transition-colors">
+                        Join Workshop
+                      </button>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold mb-6">Additional Learning Materials</h3>
+<div class="space-y-6">
+<div class="flex items-center justify-between gap-6 p-6 rounded-lg bg-white border border-gray-200 shadow-sm">
+<div class="flex items-center gap-6">
+<img alt="Research Ethics Guide" class="w-32 h-20 object-cover rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATo51Ho4pZzK72c6pYYmtHSy1fvJTO3URUZi49EVwKe218yDQ6ucGHQMDDtOrccFwca09L9oBeJIkD7B99Yifz9vw-fuXJARsJnMrEltBQ0tRKUJlMtY-2DEpNgQu1__F2-XWniptmKIwJwtuXuC9vFqN6lBCFqZzLXH3XpuBgxlZXcQyXmRXO52zyMccZIf96ckXJkNYPRYO-sFVHEDlTe7K0Ts-8I2tKuSPS-_yX9zzYocRgOm_LSjvfasw0nnfHnzJ7CrenDsE"/>
+<div>
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Research Ethics Guide</h4>
+<p class="text-[var(--text-secondary)] mt-1">Understand the ethical considerations in academic research.</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-md h-10 px-6 bg-white border border-gray-300 text-sm font-medium hover:bg-gray-50 transition-colors">
+                      View Guide
+                    </button>
+</div>
+<div class="flex items-center justify-between gap-6 p-6 rounded-lg bg-white border border-gray-200 shadow-sm">
+<div class="flex items-center gap-6">
+<img alt="Statistical Analysis Tools" class="w-32 h-20 object-cover rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTJfAm8c1xUR5RAdQ2JjAs95aFazNG-pwEnGA5tqEroJIjezcQqvbcVgKgw5fpUsEiX9SswK55mLqg24lAKFeyYU7Opl1UinzGco21NC5LIQYyrz3E5ePn4lQZYaeEAnPO6WdWZybFEct8nO52guH4t6qSPHiHD6A3fQAYs5gq0v9rTs41QEbK0NMtXFOLAIhrZGj2-_t0QXYePsiI8STXHvaJ2Nse201-dwnux2tCODWcgsgApnaSlP_6w1s0LgGpoPInrcsxA20"/>
+<div>
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Statistical Analysis Tools</h4>
+<p class="text-[var(--text-secondary)] mt-1">Explore tools for statistical analysis in your research.</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-md h-10 px-6 bg-white border border-gray-300 text-sm font-medium hover:bg-gray-50 transition-colors">
+                      Explore Tools
+                    </button>
+</div>
+<div class="flex items-center justify-between gap-6 p-6 rounded-lg bg-white border border-gray-200 shadow-sm">
+<div class="flex items-center gap-6">
+<img alt="Academic Writing Templates" class="w-32 h-20 object-cover rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBr4O6VK4gN4oTxK33T8ItgYFyqdT8aUnXTR3eXticPtC0gEH8ivKCnJquMWWyLOktZHfXPh9S9L9D5B6HTHk4qu8SB9TZAAjHZrOEa6Zy2sqC9Z56AID5j3f9zbfHvqEqFwG92SJuSX2PddbL2fzBWD0dXUqeSjnQuxR4C-hgLO-EIDQZffZQCq6iVS9GkBN1sfzGSQL5tVFo6WY5f5qAHkWGo0C0MUb1TacqxeKHilZNqZBdICVwex1Av9e0gax9onbc53uRGDA"/>
+<div>
+<h4 class="text-lg font-semibold text-[var(--text-primary)]">Academic Writing Templates</h4>
+<p class="text-[var(--text-secondary)] mt-1">Use templates to structure your research papers effectively.</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-md h-10 px-6 bg-white border border-gray-300 text-sm font-medium hover:bg-gray-50 transition-colors">
+                      Download
+                    </button>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold mb-6">Progress Tracking</h3>
+<div class="p-6 rounded-lg bg-white border border-gray-200 shadow-sm">
+<div class="flex gap-4 justify-between items-center mb-2">
+<p class="text-base font-medium text-[var(--text-primary)]">Completed Resources</p>
+<p class="text-base font-semibold text-[var(--primary-color)]">60%</p>
+</div>
+<div class="h-2.5 rounded-full bg-gray-200">
+<div class="h-2.5 rounded-full bg-[var(--primary-color)]" style="width: 60%;"></div>
+</div>
+<p class="text-[var(--text-secondary)] text-sm mt-2">You have completed 6 out of 10 recommended resources.</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
