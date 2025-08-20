@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B600%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>ScholarSphere AI - Smart Editor</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d78f2;
+        --secondary-color: #e7edf4;
+        --text-primary: #0d141c;
+        --text-secondary: #49709c;
+        --background-color: #f8fafc;
+      }
+      body {
+        font-family: Inter, "Noto Sans", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .nav-link-active {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    </style>
+</head>
+<body class="antialiased">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-4 text-text-primary">
+<div class="size-6 text-primary-color">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-text-primary text-xl font-bold leading-tight tracking-[-0.015em]">ScholarSphere AI</h2>
+</div>
+<nav class="flex items-center gap-8 text-base font-medium text-text-secondary">
+<a class="transition-colors hover:text-primary-color" href="#">Dashboard</a>
+<a class="transition-colors hover:text-primary-color" href="#">Projects</a>
+<a class="transition-colors hover:text-primary-color" href="#">Library</a>
+<a class="nav-link-active" href="#">Smart Editor</a>
+<a class="transition-colors hover:text-primary-color" href="#">AI Assistant</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-secondary-color text-text-primary transition-colors hover:bg-slate-200">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALSsQ9lWzKL8_-ROGoesj1ARXg_p3zFE0kzECj2SsNhLkAOfZmuoYZ0fSqmsOjPzKAU0eNToQbAWz_SiIOQJIK07ukx8XCh7eLuySJdRtjnwnkL_4brigNOrqhSTmxXRkE5fxYv6CVpmYzOgj9vxZ3gP9Z7rV_XAMx1XkvHO4eujkPGJIcNQtSXX8ZpN9-ueYvqm1JISLsroAj8F9rvK2t1WzIJHozJdelaYjtmjgMvE4MoRn62VYXB3kj-hAMTQWGVocNGIyNic8");'></div>
+</div>
+</header>
+<main class="flex flex-1 gap-6 p-6">
+<div class="flex flex-1 flex-col rounded-lg bg-white p-6 shadow-sm">
+<div class="mb-6">
+<h1 class="text-3xl font-bold tracking-tight text-text-primary">Smart Editor</h1>
+<p class="mt-1 text-text-secondary">Start writing your academic paper with AI-powered assistance.</p>
+</div>
+<div class="mb-6">
+<label class="mb-2 block text-sm font-medium text-text-primary" for="doc-title">Document Title</label>
+<input class="form-input w-full rounded-md border-slate-300 bg-background-color text-text-primary placeholder:text-text-secondary focus:border-primary-color focus:ring-primary-color" id="doc-title" placeholder="e.g., The Impact of AI on Academic Research" type="text"/>
+</div>
+<div class="flex-1">
+<label class="mb-2 block text-sm font-medium text-text-primary" for="content-editor">Content</label>
+<textarea class="form-textarea h-full min-h-[400px] w-full rounded-md border-slate-300 bg-background-color text-text-primary placeholder:text-text-secondary focus:border-primary-color focus:ring-primary-color" id="content-editor" placeholder="Begin your research paper here. Use '@' to insert citations from your library."></textarea>
+</div>
+<div class="mt-6 flex justify-end gap-4">
+<button class="h-10 cursor-pointer rounded-md bg-secondary-color px-4 text-sm font-semibold text-text-primary transition-colors hover:bg-slate-200">
+<span>Save Draft</span>
+</button>
+<button class="h-10 cursor-pointer rounded-md bg-primary-color px-4 text-sm font-semibold text-white transition-colors hover:bg-blue-700">
+<span>Submit</span>
+</button>
+</div>
+</div>
+<aside class="flex w-[360px] flex-col gap-6">
+<div class="rounded-lg bg-white p-6 shadow-sm">
+<h2 class="mb-4 text-xl font-semibold tracking-tight text-text-primary">AI Assistance</h2>
+<ul class="space-y-4">
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M170.48,115.7A44,44,0,0,0,140,40H72a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM80,56h60a28,28,0,0,1,0,56H80Zm72,136H80V128h72a32,32,0,0,1,0,64Z"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-text-primary">Grammar &amp; Style</p>
+<p class="text-sm text-text-secondary">Check for errors</p>
+</div>
+</li>
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-text-primary">Plagiarism Checker</p>
+<p class="text-sm text-text-secondary">Ensure originality</p>
+</div>
+</li>
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,56V88a8,8,0,0,1-16,0V64H136V192h24a8,8,0,0,1,0,16H96a8,8,0,0,1,0-16h24V64H64V88a8,8,0,0,1-16,0V56a8,8,0,0,1,8-8H200A8,8,0,0,1,208,56Z"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-text-primary">Rephrase/Elaborate</p>
+<p class="text-sm text-text-secondary">Improve your writing</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="rounded-lg bg-white p-6 shadow-sm">
+<h2 class="mb-4 text-xl font-semibold tracking-tight text-text-primary">Templates</h2>
+<ul class="space-y-2">
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+</svg>
+</div>
+<p class="flex-1 font-medium text-text-primary">Research Paper</p>
+</li>
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+</svg>
+</div>
+<p class="flex-1 font-medium text-text-primary">Thesis</p>
+</li>
+<li class="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-colors hover:bg-secondary-color">
+<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-secondary-color text-text-primary">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+</svg>
+</div>
+<p class="flex-1 font-medium text-text-primary">Essay</p>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div>
+
+</body></html>
