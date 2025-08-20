@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B600%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<title>ScholarSphere AI - Profile Settings</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d78f2;
+        --background-color: #f8fafc;
+        --sidebar-bg: #ffffff;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --border-color: #e2e8f0;
+        --input-bg: #ffffff;
+        --input-focus-border: #0d78f2;
+        --button-text-color: #ffffff;
+        --active-nav-bg: #eef5ff;
+        --active-nav-text: #0d78f2;
+      }
+      body {
+        font-family: 'Inter', "Noto Sans", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .form-input {
+        @apply w-full rounded-md border border-[var(--border-color)] bg-[var(--input-bg)] px-4 py-2 text-sm text-[var(--text-primary)] transition-all duration-200 placeholder:text-[var(--text-secondary)] focus:border-[var(--input-focus-border)] focus:outline-none focus:ring-1 focus:ring-[var(--input-focus-border)];
+      }
+      .btn-primary {
+        @apply flex h-10 items-center justify-center rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-[var(--button-text-color)] shadow-sm transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:ring-offset-2;
+      }
+      .btn-secondary {
+        @apply flex h-9 items-center justify-center rounded-md border border-[var(--border-color)] bg-[var(--input-bg)] px-3 py-1.5 text-sm font-medium text-[var(--text-primary)] shadow-sm transition-all duration-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:ring-offset-2;
+      }
+      .nav-link {
+        @apply flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-primary)] transition-colors duration-200 hover:bg-[var(--active-nav-bg)] hover:text-[var(--active-nav-text)];
+      }
+      .nav-link.active {
+        @apply bg-[var(--active-nav-bg)] text-[var(--active-nav-text)];
+      }
+      .material-icons-outlined {
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+<div class="flex min-h-screen w-full bg-[var(--background-color)]">
+<aside class="flex w-64 flex-col border-r border-[var(--border-color)] bg-[var(--sidebar-bg)] p-4">
+<div class="mb-8 flex items-center gap-2">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h1 class="text-xl font-bold text-[var(--text-primary)]">ScholarSphere</h1>
+</div>
+<div class="flex flex-col items-center gap-4 border-b border-[var(--border-color)] pb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdh2GSa3ASGLlx_SonqLZvnfQKNMvXyWsFZ41uHBk2bGo-eSdzy6xMHnL6qhpT71ge-CnxDyQrbDUIL6W0wkBV-cV4jBk8A3wvZDxrGFmDP9BnX5xzvrHwPqi_UFMEUFNUtsJBiGqhoVyKfBwbHkVYKLLHaPppqrt_1ooBLgyHpuPCEbhcVChQCljx-tm1XI7bWT-tnz3koXgioopblh14u86nNbcvD6ciEbiMiGaqP9c8iEB9zld6eGrZWm1zeGRvVOFF0gYengs");'></div>
+<div class="text-center">
+<h2 class="text-lg font-semibold text-[var(--text-primary)]">Sophia Carter</h2>
+<p class="text-sm text-[var(--text-secondary)]">University of Science</p>
+</div>
+</div>
+<nav class="mt-6 flex flex-1 flex-col gap-1">
+<a class="nav-link" href="#">
+<span class="material-icons-outlined">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="nav-link" href="#">
+<span class="material-icons-outlined">folder_open</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="nav-link" href="#">
+<span class="material-icons-outlined">bookmark_border</span>
+<span class="text-sm font-medium">Library</span>
+</a>
+<a class="nav-link" href="#">
+<span class="material-icons-outlined">explore</span>
+<span class="text-sm font-medium">Explore</span>
+</a>
+<a class="nav-link active" href="#">
+<span class="material-icons-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+</nav>
+<div class="mt-6">
+<a class="nav-link" href="#">
+<span class="material-icons-outlined">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto p-8">
+<div class="mx-auto max-w-4xl">
+<header class="mb-8">
+<h1 class="text-3xl font-bold text-[var(--text-primary)]">Profile Settings</h1>
+<p class="mt-1 text-[var(--text-secondary)]">Manage your account and preferences.</p>
+</header>
+<div class="space-y-12">
+<section>
+<h2 class="text-xl font-semibold text-[var(--text-primary)]">Personal Information</h2>
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="full_name">Full Name</label>
+<div class="mt-2">
+<input class="form-input" id="full_name" type="text" value="Sophia Carter"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="email">Email Address</label>
+<div class="mt-2">
+<input class="form-input" id="email" type="email" value="sophia.carter@university.edu"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="affiliation">Affiliation</label>
+<div class="mt-2">
+<input class="form-input" id="affiliation" type="text" value="University of Science"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="contact_number">Contact Number</label>
+<div class="mt-2">
+<input class="form-input" id="contact_number" type="tel" value="+1 234 567 890"/>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="btn-primary">Update Profile</button>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-semibold text-[var(--text-primary)]">Change Password</h2>
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="current_password">Current Password</label>
+<div class="mt-2">
+<input class="form-input" id="current_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div></div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="new_password">New Password</label>
+<div class="mt-2">
+<input class="form-input" id="new_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="confirm_password">Confirm New Password</label>
+<div class="mt-2">
+<input class="form-input" id="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="btn-primary">Change Password</button>
+</div>
+</section>
+<section class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+<div>
+<h2 class="text-xl font-semibold text-[var(--text-primary)]">Notifications</h2>
+<div class="mt-6 space-y-4">
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="email-notifications" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-[var(--text-primary)]" for="email-notifications">Email Notifications</label>
+<p class="text-[var(--text-secondary)]">Get notified about project updates and mentions.</p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="in-app-notifications" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-[var(--text-primary)]" for="in-app-notifications">In-app Notifications</label>
+<p class="text-[var(--text-secondary)]">Show notifications inside the web platform.</p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-6 items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="push-notifications" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-[var(--text-primary)]" for="push-notifications">Push Notifications</label>
+<p class="text-[var(--text-secondary)]">Receive push notifications on your devices.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-semibold text-[var(--text-primary)]">Preferences</h2>
+<div class="mt-6 space-y-6">
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="citation_style">Default Citation Style</label>
+<div class="mt-2">
+<select class="form-input" id="citation_style">
+<option>APA 7th Edition</option>
+<option selected="">MLA 9th Edition</option>
+<option>Chicago 17th Edition</option>
+<option>Harvard</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-[var(--text-primary)]" for="visualization_type">Preferred Data Visualization</label>
+<div class="mt-2">
+<select class="form-input" id="visualization_type">
+<option>Bar Chart</option>
+<option>Line Chart</option>
+<option selected="">Pie Chart</option>
+<option>Scatter Plot</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-semibold text-[var(--text-primary)]">Connected Accounts</h2>
+<div class="mt-6 space-y-4">
+<div class="flex items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--sidebar-bg)] p-4">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100">
+<span class="material-icons-outlined text-slate-500">school</span>
+</div>
+<div>
+<h3 class="font-semibold text-[var(--text-primary)]">University Credentials</h3>
+<p class="text-sm text-green-600">Connected</p>
+</div>
+</div>
+<button class="btn-secondary">Disconnect</button>
+</div>
+<div class="flex items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--sidebar-bg)] p-4">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100">
+<span class="material-icons-outlined text-slate-500">link</span>
+</div>
+<div>
+<h3 class="font-semibold text-[var(--text-primary)]">Reference Manager</h3>
+<p class="text-sm text-[var(--text-secondary)]">Not Connected</p>
+</div>
+</div>
+<button class="btn-primary">Connect</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
