@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B600%3B700&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="httpshttps://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<title>ScholarSphere AI - Recommendations</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #eff6ff;
+        --primary-100: #dbeafe;
+        --primary-200: #bfdbfe;
+        --primary-500: #3b82f6;
+        --primary-600: #2563eb;
+        --primary-700: #1d4ed8;
+        --primary-900: #1e3a8a;
+        --slate-50: #f8fafc;
+        --slate-100: #f1f5f9;
+        --slate-200: #e2e8f0;
+        --slate-300: #cbd5e1;
+        --slate-400: #94a3b8;
+        --slate-500: #64748b;
+        --slate-600: #475569;
+        --slate-700: #334155;
+        --slate-800: #1e293b;
+        --slate-900: #0f172a;
+      }
+      body {
+        font-family: "Inter", "Noto Sans", sans-serif;
+      }
+      .relevance-high {
+        @apply bg-green-100 text-green-800;
+      }
+      .relevance-medium {
+        @apply bg-yellow-100 text-yellow-800;
+      }
+      .relevance-low {
+        @apply bg-red-100 text-red-800;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 px-10 py-3">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-slate-900" href="#">
+<div class="size-6 text-[var(--primary-600)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-[-0.015em]">ScholarSphere AI</h1>
+</a>
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-600)] transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-600)] transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-600)] transition-colors" href="#">Library</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-600)] transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full rounded-md border-slate-300 bg-white py-2 pl-10 pr-4 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" placeholder="Search..." value=""/>
+</label>
+<button class="relative flex size-10 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+<div class="absolute top-2 right-2 flex size-2 rounded-full bg-red-500"></div>
+</button>
+<button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-200 hover:border-[var(--primary-500)] transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7Se_vphBsHpsINQrD8vGDouf7tsIQuGxl5IceGf5nUFhfhr9h0yWGOBlYf_1MnP2Hisu3-TGiszI0ZugGAZStNcOmfN5Ab6F9j5k5CMWqXIc_VWlEPDSHfWaqGAKefo_-Foi-jpcjKANlCK8yG6dyA6A5HbBOVvPt3wVryn61NI7fEx37Vbe7DRbQcWO6bx_80JC4c-4YtWKyFBZEZdGzSn2F6o49c7eombXf-t863KmdGPhsQmETUDfbHY-kR9clifrwcsIuegw");'></div>
+</button>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-10 py-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900">Recommendations</h1>
+<p class="mt-1 text-slate-500">Discover AI-powered recommendations for conferences and journals tailored to your research.</p>
+</div>
+<div class="space-y-12">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-semibold text-slate-800">Conference Recommendations</h2>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Sort by:</span>
+<select class="form-select rounded-md border-slate-300 py-1.5 text-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]">
+<option>Relevance</option>
+<option>Deadline</option>
+<option>Name</option>
+</select>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[800px] text-sm">
+<thead class="bg-slate-50 text-slate-600">
+<tr>
+<th class="py-3 px-4 text-left font-semibold">Conference</th>
+<th class="py-3 px-4 text-left font-semibold">Scope</th>
+<th class="py-3 px-4 text-left font-semibold">Submission Deadline</th>
+<th class="py-3 px-4 text-center font-semibold">Relevance</th>
+<th class="py-3 px-4 text-left font-semibold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">International Conference on Machine Learning</td>
+<td class="p-4 text-slate-500">Focuses on theoretical and applied aspects of machine learning.</td>
+<td class="p-4 text-slate-500">2024-08-15</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-high">High</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">Conference on Neural Information Processing Systems</td>
+<td class="p-4 text-slate-500">Covers neural networks and related fields.</td>
+<td class="p-4 text-slate-500">2024-09-01</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-medium">Medium</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">Association for the Advancement of Artificial Intelligence Conference</td>
+<td class="p-4 text-slate-500">Broad AI topics including robotics, NLP, and computer vision.</td>
+<td class="p-4 text-slate-500">2024-07-20</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-high">High</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-semibold text-slate-800">Journal Recommendations</h2>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Sort by:</span>
+<select class="form-select rounded-md border-slate-300 py-1.5 text-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]">
+<option>Relevance</option>
+<option>Impact Factor</option>
+<option>Name</option>
+</select>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[800px] text-sm">
+<thead class="bg-slate-50 text-slate-600">
+<tr>
+<th class="py-3 px-4 text-left font-semibold">Journal</th>
+<th class="py-3 px-4 text-left font-semibold">Scope</th>
+<th class="py-3 px-4 text-left font-semibold">Impact Factor</th>
+<th class="py-3 px-4 text-center font-semibold">Relevance</th>
+<th class="py-3 px-4 text-left font-semibold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">Journal of Machine Learning Research</td>
+<td class="p-4 text-slate-500">Covers all areas of machine learning.</td>
+<td class="p-4 text-slate-500">4.5</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-high">High</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">IEEE Transactions on Pattern Analysis and Machine Intelligence</td>
+<td class="p-4 text-slate-500">Focuses on pattern analysis and machine intelligence.</td>
+<td class="p-4 text-slate-500">8.2</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-medium">Medium</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">Artificial Intelligence Journal</td>
+<td class="p-4 text-slate-500">A leading journal in the field of AI.</td>
+<td class="p-4 text-slate-500">6.1</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-high">High</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-medium text-slate-900">Journal of Artificial Intelligence Research</td>
+<td class="p-4 text-slate-500">Covers a wide range of AI topics.</td>
+<td class="p-4 text-slate-500">2.8</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium relevance-low">Low</span>
+</td>
+<td class="p-4 text-right">
+<a class="text-sm font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View Details</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
