@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;600;700;800;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>ScholarSphere AI - Gamified Research Challenges</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #0d78f2;
+      --secondary-color: #e7edf4;
+      --background-color: #f8fafc;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --card-background: #ffffff;
+      --border-color: #e2e8f0;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background-color)]" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden text-[var(--text-primary)]">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4 bg-[var(--card-background)] shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-[var(--text-primary)]">
+<div class="size-6 text-[var(--primary-color)]">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight">ScholarSphere AI</h1>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">Resources</a>
+<a class="text-sm font-bold text-[var(--primary-color)]" href="#">Challenges</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative flex min-w-40 max-w-64">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--text-secondary)]">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full rounded-full border-gray-300 bg-[var(--secondary-color)] pl-10 pr-4 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition-all" placeholder="Search..." value=""/>
+</label>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-[var(--secondary-color)] text-[var(--text-secondary)] hover:bg-gray-200 hover:text-[var(--text-primary)] transition-colors">
+<svg fill="currentColor" height="22px" viewBox="0 0 256 256" width="22px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxDCEMEahm2-jnJKz8pF10D6QTSVElusjaSfPNcA7KiGesLMAY_adMbI0x8eWvgnhHVL7OTLf7JSFKXL0xYvGWNKQvRLMMTYx2f4VT3vahHHXynwZclkUhY6i_H9pT5_QzD9D-wOSrgbrHG48aUFA1UXsrqYI5-cbcJxOu-AY5CohAKnv3B7Y20BbMazRMOUsL9ZgttRCXL2PRsHMK2vt169YO9v878oB7Jf0kzcq54aqoEAIm6SHoEtp3LKSWcrSZmHTCpX879og");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-6xl space-y-12">
+<div class="text-center">
+<h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Gamified Research Challenges</h1>
+<p class="mt-4 text-lg text-[var(--text-secondary)]">Participate in challenges, earn points, and climb the leaderboard.</p>
+</div>
+<section>
+<h2 class="text-2xl font-bold tracking-tight mb-6">Available Challenges</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col rounded-xl bg-[var(--card-background)] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+<div class="h-48 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfnqRvII8Yx_dI00jYd4jFEqhRtUzYU-N6hweOtxY9buCIuWW-E49p8EkZmgrKZCnE5eCX9tmiitU135knFZpDZoFiU8JYtUxa-ZihKUFw7ykiUaAtibEaiXB3fU1BPtAYeVoladtqCWwl-PuwJ6q31b79PbPGUUFzkRn_gFc8cmhWCzhCFb4vqiVc6h9iURtIrnDkdDyHxa-ZeLRjTdOp9v19J6WyMbjy5j8iHSw9Gt10E-EzIz1UN18BtILe4y5HxMR-dlM3tBE");'></div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold leading-tight">Literature Review Master</h3>
+<p class="text-sm text-[var(--text-secondary)] mt-2 flex-grow">Complete a comprehensive literature review on a topic of your choice within one week.</p>
+<div class="flex items-center justify-between mt-4">
+<span class="text-sm font-semibold text-[var(--primary-color)]">🏆 500 Points</span>
+<button class="rounded-full bg-[var(--primary-color)] text-white px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-colors">Join Now</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl bg-[var(--card-background)] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+<div class="h-48 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDldJbQer9P-Zcq7_HN0PcYF7s5JDVLHE6xPLmbWtOrb1YfG1B2r8LTOSLCmrD2dcr1eVz1k9WFZ8yVNmT-Nt7gWld_JhtwIfSGgytFpMNrv-dVfSSwO7kxHudPCLVzg1sHJukfThNXQJEzeuDZLzDRse0L5KPXUJHmpF170j6HdDvejc9AsIPmKfo21T-mSEUCKlpssjskh7Mp6bJ843MuYS1ragwpJsdDW3_sDUAkaHBzQE3QdBSEuZiH_uxh2uKkfFC7Dk474PQ");'></div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold leading-tight">Collaborative Contributor</h3>
+<p class="text-sm text-[var(--text-secondary)] mt-2 flex-grow">Contribute significantly to a collaborative research project with your peers.</p>
+<div class="flex items-center justify-between mt-4">
+<span class="text-sm font-semibold text-[var(--primary-color)]">🤝 300 Points</span>
+<button class="rounded-full bg-[var(--primary-color)] text-white px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-colors">Join Now</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl bg-[var(--card-background)] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+<div class="h-48 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdPAW3laG1oemBStckFhfilXlyyd4pzZ3dNa51kw744WLRrdQ1oexjNEH0w4XSkeTe-BeXUXzh-f06FC4mc2qQdMtOHakNHGNTxlVBGIvruUtRBRgqeN87akblx2DnsQHe8o5S13bHz7_d64VTHybk2rH33GMXI7Jux6ZhGulvBHmHkrKWuASDiAt7ret_Mc-0tdNM69iTQ-e9dZBwTodSviWY06uTG2UGjg2jJlXZf3riSKssYtJ_1DR4x7-6FbhessDzlPiEWOs");'></div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold leading-tight">Research Tool Expert</h3>
+<p class="text-sm text-[var(--text-secondary)] mt-2 flex-grow">Master a specific research tool and demonstrate your proficiency.</p>
+<div class="flex items-center justify-between mt-4">
+<span class="text-sm font-semibold text-[var(--primary-color)]">🛠️ 400 Points</span>
+<button class="rounded-full bg-[var(--primary-color)] text-white px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-colors">Join Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<section class="lg:col-span-2">
+<h2 class="text-2xl font-bold tracking-tight mb-6">Progress Tracking</h2>
+<div class="space-y-6 rounded-xl bg-[var(--card-background)] shadow-lg p-6">
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Overall Progress</h3>
+<span class="text-sm font-bold text-[var(--primary-color)]">60%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Literature Review Master</h3>
+<span class="text-sm font-bold text-[var(--primary-color)]">80%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Collaborative Contributor</h3>
+<span class="text-sm font-bold text-[var(--primary-color)]">40%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Research Tool Expert</h3>
+<span class="text-sm font-bold text-[var(--primary-color)]">70%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight mb-6">Leaderboard</h2>
+<div class="rounded-xl bg-[var(--card-background)] shadow-lg overflow-hidden">
+<table class="w-full text-sm text-left">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-4 py-3 font-semibold" scope="col">Rank</th>
+<th class="px-4 py-3 font-semibold" scope="col">Student</th>
+<th class="px-4 py-3 font-semibold text-right" scope="col">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-[var(--border-color)]">
+<td class="px-4 py-3 font-medium">🥇 1</td>
+<td class="px-4 py-3 font-medium">Ethan Harper</td>
+<td class="px-4 py-3 text-right text-[var(--text-secondary)] font-semibold">1500</td>
+</tr>
+<tr class="border-t border-t-[var(--border-color)] bg-blue-50/50">
+<td class="px-4 py-3 font-medium">🥈 2</td>
+<td class="px-4 py-3 font-medium">Olivia Bennett</td>
+<td class="px-4 py-3 text-right text-[var(--text-secondary)] font-semibold">1450</td>
+</tr>
+<tr class="border-t border-t-[var(--border-color)]">
+<td class="px-4 py-3 font-medium">🥉 3</td>
+<td class="px-4 py-3 font-medium">Noah Carter</td>
+<td class="px-4 py-3 text-right text-[var(--text-secondary)] font-semibold">1400</td>
+</tr>
+<tr class="border-t border-t-[var(--border-color)]">
+<td class="px-4 py-3 font-medium">4</td>
+<td class="px-4 py-3 font-medium">Ava Morgan</td>
+<td class="px-4 py-3 text-right text-[var(--text-secondary)] font-semibold">1350</td>
+</tr>
+<tr class="border-t border-t-[var(--border-color)]">
+<td class="px-4 py-3 font-medium">5</td>
+<td class="px-4 py-3 font-medium">Liam Foster</td>
+<td class="px-4 py-3 text-right text-[var(--text-secondary)] font-semibold">1300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
